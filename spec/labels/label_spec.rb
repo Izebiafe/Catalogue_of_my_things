@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../classes/label'
+require_relative '../../classes/labels/label'
 describe Label do
   subject { described_class.new(1, 'General', 'red') }
 
