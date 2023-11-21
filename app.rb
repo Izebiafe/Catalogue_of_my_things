@@ -1,11 +1,5 @@
-require_relative 'classes/music/music_album'
-require_relative 'classes/music/genre'
-require_relative 'modules/modules'
-
 class App
   attr_accessor :books, :label
-
-  include Modules
 
   def initialize
     @books = []
@@ -14,7 +8,6 @@ class App
     @music_albums = []
     @games = []
     @authors = []
-    load_collections
   end
 
   def run_till6(option)
@@ -52,7 +45,6 @@ class App
   end
 
   def save_and_exit
-    save_collections
     exit
   end
 end
