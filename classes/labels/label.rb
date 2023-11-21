@@ -27,4 +27,4 @@ class Label
   def self.from_json(data)
     Label.new(data['id'], data['title'], data['color'])
   end
-  end
+end
