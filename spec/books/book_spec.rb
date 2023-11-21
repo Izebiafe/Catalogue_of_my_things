@@ -1,6 +1,6 @@
 require 'rspec'
 require 'date'
-require_relative './classes/books/book'
+require_relative '../../classes/books/book'
 describe Book do
   it 'has accessors for id, title, publish_date, publisher, and cover_state' do
     book = Book.new(1, 'Test Book', Date.today, 'Test Publisher', 'good')
