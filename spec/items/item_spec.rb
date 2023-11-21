@@ -56,6 +56,6 @@ describe Item do
 
   it 'should not change the archived property of itemTwo' do
     itemTwo.move_to_archive
-    expect(itemOne.archived).to be_nil
+    expect(itemOne.archived).to eq(false)
   end
 end
