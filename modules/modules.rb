@@ -11,7 +11,7 @@ module Modules
 
   def save_collections
     save_music
-    save_games
+    save_genres
   end
 
   def load_collections
