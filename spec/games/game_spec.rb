@@ -26,17 +26,17 @@ RSpec.describe Game do
 
   describe '#can_be_archived?' do
     it 'returns false if the game has been played in the last 2 years' do
-      game = Game.new('01/01/222', nil, '01/01/'+two_years_ago.to_s)
+      game = Game.new('01/01/222', nil, "01/01/#{two_years_ago}")
       expect(game.can_be_archived?).to be(false)
     end
 
     it 'returns true if the game has not been played in the last 2 years' do
-      game = Game.new('01/01/222', nil, '01/01/'+three_years_ago.to_s)
+      game = Game.new('01/01/222', nil, "01/01/#{three_years_ago}")
       expect(game.can_be_archived?).to be(true)
     end
 
     it 'returns true if the game is already archived' do
-      game = Game.new('01/01/222', nil, '01/01/'+three_years_ago.to_s, archived: true)
+      game = Game.new('01/01/222', nil, "01/01/#{three_years_ago}", archived: true)
       expect(game.can_be_archived?).to be(true)
     end
   end
