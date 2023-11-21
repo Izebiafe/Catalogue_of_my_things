@@ -1,5 +1,8 @@
+require_relative './modules/modules'
 class App
-  attr_accessor :books, :label
+  attr_accessor :books, :label, :authors, :games
+
+  include Modules
 
   def initialize
     @books = []
@@ -8,6 +11,9 @@ class App
     @music_albums = []
     @games = []
     @authors = []
+
+    list_authors
+    list_games
   end
 
   def run_till6(option)
