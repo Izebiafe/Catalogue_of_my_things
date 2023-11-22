@@ -25,4 +25,22 @@ RSpec.describe Author do
       expect(item.author).to eq(author)
     end
   end
+
+  describe '#to_hash' do
+    it 'returns a hash with id, first_name, and last_name' do
+      instance = Author.new('John', 'Doe', 1)
+      expected_hash = { id: 1, first_name: 'John', last_name: 'Doe' }
+      expect(instance.to_hash).to eq(expected_hash)
+    end
+  end
+
+  describe '.from_hash' do
+    it 'creates an instance from a hash' do
+      hash = { 'id' => 1, 'first_name' => 'Jane', 'last_name' => 'Smith' }
+      instance = Author.from_hash(hash)
+      expect(instance.id).to eq(1)
+      expect(instance.first_name).to eq('Jane')
+      expect(instance.last_name).to eq('Smith')
+    end
+  end
 end

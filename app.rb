@@ -1,4 +1,4 @@
-require_relative './modules/modules'
+require_relative 'modules/modules'
 class App
   attr_accessor :books, :label, :authors, :games
 

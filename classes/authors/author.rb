@@ -14,4 +14,20 @@ class Author
   def add_item(item)
     item.add_author(self)
   end
+
+  def to_hash
+    {
+      id: @id,
+      first_name: @first_name,
+      last_name: @last_name
+    }
+  end
+
+  def self.from_hash(hash)
+    new(
+      hash['first_name'],
+      hash['last_name'],
+      hash['id']
+    )
+  end
 end
