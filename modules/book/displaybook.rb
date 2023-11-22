@@ -12,7 +12,7 @@ module DisplayBook
     puts 'Press Enter to continue!'
     gets.chomp
   end
-  
+
   def display_labels
     if @label.empty?
       puts 'No labels availabel.'
