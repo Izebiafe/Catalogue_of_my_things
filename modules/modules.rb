@@ -26,5 +26,4 @@ module Modules
     load_genres
     load_music_albums
   end
-
 end

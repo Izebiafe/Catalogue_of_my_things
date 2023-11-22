@@ -15,7 +15,7 @@ module GameManager
 
   def add_game_with_existing_author(publish_date, last_played_at, multiplayer, author_id)
     initialize_game_manager unless @authors && @games
-    game = Game.new(publish_date, nil, last_played_at, archived: false, multiplayer: multiplayer)
+    game = Game.new(publish_date, nil, last_played_at, archived: false, multiplayer:)
     author = @authors.find { |a| a.id == author_id }
     game.add_author(author)
     game.move_to_archive
@@ -25,7 +25,7 @@ module GameManager
 
   def add_game_with_new_author(publish_date, last_played_at, multiplayer, first_name, last_name)
     initialize_game_manager unless @authors && @games
-    game = Game.new(publish_date, nil, last_played_at, archived: false, multiplayer: multiplayer)
+    game = Game.new(publish_date, nil, last_played_at, archived: false, multiplayer:)
     author = add_author(first_name, last_name)
     game.add_author(author)
     game.move_to_archive
