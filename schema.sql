@@ -1,60 +1,71 @@
-CREATE DATABASE catalog_of_things;
+CREATE DATABASE CatalogOfThings;
+USE CatalogOfMyThings;
 
-CREATE TABLE authors (
-  id SERIAL PRIMARY KEY,
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
+CREATE TABLE item (
+    id INT PRIMARY KEY,
+    title VARCHAR(255),
+    publish_date DATE,
+    publisher VARCHAR(255),
+    cover_state VARCHAR(255)
+    archived BOOLEAN,
+    label_id INT, -- Add a foreign key for the label (one-to-many relationship)
+    genre_id INT, -- Add a foreign key for the genre (one-to-many relationship)
+    author_id INT, -- Add a foreign key for the author (one-to-many relationship)
+    FOREIGN KEY (label_id) REFERENCES labels (id)  
+    FOREIGN KEY (genre_id) REFERENCES genres (id),
+    FOREIGN KEY (author_id) REFERENCES authors (id),
 );
 
-CREATE TABLE sources (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
+-- Create the books table
+CREATE TABLE books (
+  id INT PRIMARY KEY,
+  item_id INT, -- A foreign key to reference the parent item table
+  title VARCHAR(255),
+  publish_date DATE,
+  publisher VARCHAR(255),
+  cover_state VARCHAR(255)
+  archived BOOLEAN DEFAULT false
 );
 
-CREATE TABLE items (
-  id SERIAL PRIMARY KEY,
-  publish_date DATE NOT NULL,
-  archived BOOLEAN NOT NULL,
-  source_id INT NOT NULL,
-  genre_id INT NOT NULL,
-  label_id INT NOT NULL,
-  author_id INT NOT NULL,
-  FOREIGN KEY (genre_id) REFERENCES genre(id)
-  FOREIGN KEY (label_id) REFERENCES label(id)
-  FOREIGN KEY (author_id) REFERENCES author(id)
-  PRIMARY KEY (id)
+-- Create the labels table
+CREATE TABLE labels (
+  id INT PRIMARY KEY,
+  title VARCHAR(255),
+  color VARCHAR(255)
 );
 
+-- Create the music_albums table
+CREATE TABLE music_albums (
+  id INT PRIMARY KEY,
+  item_id INT, -- A foreign key to reference the parent item table
+  title VARCHAR(255),
+  publish_date DATE,
+  archived BOOLEAN DEFAULT false,
+  on_spotify BOOLEAN DEFAULT false
+);
+
+-- Create the genres table
+CREATE TABLE genres (
+  id INT PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+-- Create the games table
 CREATE TABLE games (
-  id SERIAL PRIMARY KEY,
-  publish_date DATE NOT NULL,
-  archived BOOLEAN NOT NULL,
-  source_id INT NOT NULL,
-  genre_id INT NOT NULL,
-  label_id INT NOT NULL,
-  author_id INT NOT NULL,
-  multiplayer BOOLEAN NOT NULL,
+  id INT PRIMARY KEY,
+  item_id INT, -- A foreign key to reference the parent item table
+  title VARCHAR(255),
+  publish_date DATE,
+  multiplayer BOOLEAN,
   last_played_at DATE,
-  FOREIGN KEY (genre_id) REFERENCES genre(id)
-  FOREIGN KEY (label_id) REFERENCES label(id)
-  FOREIGN KEY (author_id) REFERENCES author(id)
+  archived BOOLEAN DEFAULT false,
+  author_id INT, -- Add a foreign key for the author (one-to-many relationship)
+  FOREIGN KEY (author_id) REFERENCES authors (id)
 );
 
-CREATE TABLE genre
-(
-    id INT PRIMARY KEY NOT NULL,
-    name VARCHAR(100),
-    items TEXT
-    []
+-- Create the authors table
+CREATE TABLE authors (
+  id INT PRIMARY KEY,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255)
 );
-    
-    CREATE TABLE music_album
-    (
-        id INT PRIMARY KEY NOT NULL,
-        on_spotify BOOLEAN,
-        publish_date DATE,
-        archived BOOLEAN,
-        genre_id INT REFERENCES genre(id)
-    );
