@@ -3,6 +3,7 @@ require_relative '../../classes/authors/author'
 require_relative '../authors/author_store'
 require_relative 'game_store'
 
+# rubocop:disable Metrics/ModuleLength
 module GameManager
   include GamesStore
   include AuthorsStore
@@ -53,6 +54,7 @@ module GameManager
     end
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
   def add_game
     puts '* * * Add New Game wizard, type # anytime to exit. * * *'
     publish_date = input_date('publish date')
@@ -94,6 +96,7 @@ module GameManager
     end
     puts('* * *Game successfully added! * * *')
   end
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/MethodLength
 
   def input_date(type)
     if type == 'last play date'
@@ -109,6 +112,7 @@ module GameManager
     gets.chomp
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def input_author
     initialize_game_manager unless @authors && @games
     puts 'Who is the author ?(answer with the author id or new if it a new author)'
@@ -124,6 +128,7 @@ module GameManager
     end
     res.to_i
   end
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
   def input_author_from_list
     display_all_authors
@@ -147,3 +152,4 @@ module GameManager
     !!(date =~ date_pattern)
   end
 end
+# rubocop:enable Metrics/ModuleLength
