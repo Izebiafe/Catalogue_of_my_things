@@ -17,7 +17,9 @@ RSpec.describe DisplayMusic do
 
   describe '#display_all_music_albums' do
     it 'displays all music albums with their index, on_Spotify status, publish date, and genre' do
-      expect { @dummy_instance.display_all_music_albums }.to output("0) on_Spotify: true, Publish Date: 01/01/2022 Genre: Rock\n1) on_Spotify: false, Publish Date: 02/01/2022 Genre: N/A\n").to_stdout
+      expect {
+        @dummy_instance.display_all_music_albums
+      }.to output("0) on_Spotify: true, Publish Date: 01/01/2022 Genre: Rock\n1) on_Spotify: false, Publish Date: 02/01/2022 Genre: N/A\n").to_stdout
     end
   end
 end
