@@ -1,10 +1,11 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
+- [📖 Catalog Of Things ](#-catalog-of-things-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Video Demo ](#-live-demo-)
+  - [🚀 Video Demo ](#-video-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -110,6 +111,18 @@ Deployment is not available yet.
 - GitHub: [@githubhandle](https://github.com/Izebiafe)
 - Twitter: [@instagramhandle](https://www.instagram.com/Izebiafe)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/Izebiafe)
+  
+👤 **Manezeu Patricia**
+
+- GitHub: [@githubhandle](https://github.com/patriciachrysy)
+- Twitter: [@twitterhandle](https://twitter.com/ManezeuP)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/manezeu-patricia-chrystelle/)
+
+👤 **Mohammad Yaser**
+
+- GitHub: [@githubhandle](https://github.com/MohammadYaser)
+- Twitter: [@twitterhandle](https://twitter.com/Yaser_Safi19)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-yaser-safi-a12083270)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
