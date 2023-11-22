@@ -11,7 +11,7 @@ class Main
     loop do
       display_options
       option = take_input
-      if option >= 1 && option < 7
+      if option >= 1 && option < 6
         @app.run_till6(option)
       else
         @app.run_more_than6(option)

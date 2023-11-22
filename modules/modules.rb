@@ -1,3 +1,7 @@
+require_relative 'authors/author_store'
+require_relative 'authors/author_manager'
+require_relative 'games/game_store'
+require_relative 'games/game_manager'
 require_relative 'music/addmusic'
 require_relative 'music/displaymusic'
 require_relative 'music/displaygenre'
@@ -8,6 +12,10 @@ module Modules
   include DisplayMusic
   include DisplayGenres
   include Storage
+  include GamesStore
+  include AuthorsStore
+  include AuthorManager
+  include GameManager
 
   def save_collections
     save_music
