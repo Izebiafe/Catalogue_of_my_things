@@ -26,17 +26,14 @@ module Modules
   def save_collections
     save_music
     save_genres
+    save_book
+    save_label
   end
 
   def load_collections
     load_genres
     load_music_albums
-    
-     def save_collections
-    save_book
-  end
-
-  def load_collections
-    load_book
+    load_labels
+    load_books
   end
 end

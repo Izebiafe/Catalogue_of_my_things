@@ -1,3 +1,6 @@
+require_relative '../../classes/books/book'
+require_relative '../../classes/labels/label'
+
 module AddBook
   def add_book
     publish_date = input_date
@@ -33,7 +36,7 @@ module AddBook
     color = gets.chomp
     puts 'Enter Label title'
     title = gets.chomp
-    label = Label.new(color, title, book.id)
+    label = Label.new(book.id, title, color)
     @label << label
     label
   end

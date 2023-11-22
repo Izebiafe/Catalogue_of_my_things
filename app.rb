@@ -8,10 +8,6 @@ class App
 
   include Modules
 
-  include Modules
-
-  include Modules
-
   def initialize
     @books = []
     @label = []

@@ -2,6 +2,8 @@ require 'json'
 
 module Storage
   def save_file(file_name, data)
+    FileUtils.mkdir_p(File.dirname(file_name)) unless File.directory?(File.dirname(file_name))
+    File.write(file_name, '[]') unless File.exist?(file_name)
     File.write(file_name, JSON.pretty_generate(data))
   end
 
