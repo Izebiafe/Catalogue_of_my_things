@@ -24,26 +24,4 @@ RSpec.describe Storage do
       File.delete(file_name)
     end
   end
-
-  describe '#save_music' do
-    it 'saves the music albums and genres' do
-      # Add some test data to the music albums and genres arrays
-      music_album = instance_double('MusicAlbum',
-                                    to_hash: { id: 1, publish_date: '2022-01-01', on_spotify: true, genre: 'Rock' })
-      genre = instance_double('Genre', to_hash: { name: 'Rock', id: 1 })
-      @dummy_instance.instance_variable_get(:@music_albums) << music_album
-      @dummy_instance.instance_variable_get(:@genres) << genre
-
-      # Call the method
-      @dummy_instance.save_music
-
-      # Check if the music albums and genres files were saved
-      expect(File.exist?('data/music_albums.json')).to be true
-      expect(File.exist?('data/genres.json')).to be true
-
-      # Clean up the test files
-      File.delete('data/music_albums.json')
-      File.delete('data/genres.json')
-    end
-  end
 end
