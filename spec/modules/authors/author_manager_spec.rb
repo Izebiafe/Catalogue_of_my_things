@@ -2,7 +2,6 @@ require 'rspec'
 require_relative '../../../classes/authors/author'
 require_relative '../../../modules/authors/author_manager'
 
-
 class AuthorManagerClass
   include AuthorManager
 end

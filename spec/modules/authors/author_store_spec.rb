@@ -3,7 +3,6 @@ require 'fileutils'
 require_relative '../../../classes/authors/author'
 require_relative '../../../modules/authors/author_store'
 
-
 class AuthorStoreClass
   include AuthorsStore
   attr_accessor :authors
