@@ -1,5 +1,10 @@
+require_relative 'classes/books/book'
+require_relative 'modules/modules'
+
 class App
   attr_accessor :books, :label
+
+  include Modules
 
   def initialize
     @books = []

@@ -1,30 +1,16 @@
 # book.rb
 require_relative '../items/item'
+
 class Book < Item
-  attr_accessor :publisher, :cover_state
+  attr_accessor :cover_state, :publisher
 
-  def initialize(id, title, publish_date, publisher, cover_state)
-    super(id, title, publish_date)
-    @publisher = publisher
+  def initialize(cover_state, publisher, publish_date, id = nil)
+    super(publish_date, id)
     @cover_state = cover_state
+    @publisher = publisher
   end
 
-  def can_be_archived?
-    super || @cover_state == 'bad'
-  end
-
-  def to_json(*_args)
-    {
-      'class_name' => 'Book',
-      'id' => id,
-      'title' => title,
-      'publish_date' => publish_date.strftime('%Y-%m-%d'),
-      'publisher' => publisher,
-      'cover_state' => cover_state
-    }
-  end
-
-  def self.from_json(data)
-    Book.new(data['id'], data['title'], Date.parse(data['publish_date']), data['publisher'], data['cover_state'])
+  def can_be_archived
+    super || (@cover_state == 'bad')
   end
 end
