@@ -5,7 +5,7 @@ def test_add_music
   mock_genre_name = 'Rock'
 
   # Stubbing input methods
-  AddMusic.stub(:input_date, mock_input_date) do
+  AddMusic.stub(:input_music_date, mock_input_date) do
     AddMusic.stub(:input_on_spotify, mock_input_on_spotify) do
       AddMusic.stub(:add_genre, mock_genre_name) do
         # Act

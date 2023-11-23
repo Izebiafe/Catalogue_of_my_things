@@ -3,7 +3,7 @@ require_relative '../../classes/labels/label'
 
 module AddBook
   def add_book
-    publish_date = input_date
+    publish_date = input_book_date
     publisher = input_publisher
     cover_state = input_cover_state
     book = Book.new(cover_state, publisher, publish_date)
@@ -15,7 +15,7 @@ module AddBook
     gets.chomp
   end
 
-  def input_date
+  def input_book_date
     puts 'Please Enter publish date in following format: yyyy/mm/dd'
     gets.chomp
   end

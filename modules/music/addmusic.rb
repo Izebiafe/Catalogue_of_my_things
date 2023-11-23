@@ -1,6 +1,6 @@
 module AddMusic
   def add_music
-    publish_date = input_date
+    publish_date = input_music_date
     on_spotify = input_on_spotify
     music_album = MusicAlbum.new(publish_date: publish_date, on_spotify: on_spotify)
     @music_albums << music_album
@@ -9,7 +9,7 @@ module AddMusic
     puts 'Music album Added Successfully'
   end
 
-  def input_date
+  def input_music_date
     puts 'Please Enter publish date in following format: dd/mm/yyyy'
     gets.chomp
   end
