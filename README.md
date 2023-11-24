@@ -84,8 +84,11 @@ Example command:
 ### Usage
 
 To run the project, execute the following command:
-
 Create objects of classes & run on code editor
+
+```sh
+  ruby main.rb
+```
 
 ### Run tests
 
@@ -111,7 +114,7 @@ Deployment is not available yet.
 - GitHub: [@githubhandle](https://github.com/Izebiafe)
 - Twitter: [@instagramhandle](https://www.instagram.com/Izebiafe)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/Izebiafe)
-  
+
 👤 **Manezeu Patricia**
 
 - GitHub: [@githubhandle](https://github.com/patriciachrysy)
