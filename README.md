@@ -41,7 +41,7 @@
 
 ## 🚀 Video Demo <a name="live-demo"></a>
 
-[Video Demo of the project](https://drive.google.com/file/d/1FxafadxEdUAr-_AdFWsx8liFWFag8WLk/view?usp=sharing)
+[Video Demo of the project](https://drive.google.com/file/d/1Pgq3ZPkEo6b0kudwsCj3AFumjsweOyaM/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
