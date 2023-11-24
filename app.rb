@@ -1,11 +1,10 @@
+require_relative 'classes/books/book'
 require_relative 'classes/music/music_album'
 require_relative 'classes/music/genre'
 require_relative 'modules/modules'
 
 class App
   attr_accessor :books, :label, :authors, :games
-
-  include Modules
 
   include Modules
 
